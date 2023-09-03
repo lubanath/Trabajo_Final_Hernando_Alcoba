@@ -1,4 +1,9 @@
 Algoritmo Bodegon_Lo_De_Nando_V_4626
+
+        // En este sector se creó variables las cuales almacenaran valores de lo cuales
+	// almacenaran resultados y en otros casos iran cambiando , también se creó   
+	// constantes tanto para almacenar montos ya definidos para su uso en operaciones matematicas .
+	// Las variables y constantes creadas fueron de tipo entero como de tipo real y de tipo caracter.
 	
 	definir menu Como Entero
 	definir menu_bebidas,menu_pastas,menu_postre,cant Como Entero
@@ -21,7 +26,8 @@ Algoritmo Bodegon_Lo_De_Nando_V_4626
 	Definir cont Como Entero
 	Definir contra Como Caracter
 	definir mesa,i,j,ticket como entero
-	
+
+       // Seguido de nuestra creacion de variables y constantes inicializamos las mismas,	
 	salir ="s"
 	salir_bebidas = "s"
 	salir_pastas = "s"
@@ -68,7 +74,10 @@ Algoritmo Bodegon_Lo_De_Nando_V_4626
 	total_parcial = 0
 	propina = 0
 	mesa = 0
-	
+
+        // se creo un mensaje el cual se creó con la idea de dar una apariencia de fondo de pantalla
+	// que se activa al presionar una tecla.
+
 	Escribir "**********************************"
 	Escribir ""
 	Escribir "*** Bodegon Lo De Nando ***"
@@ -76,7 +85,13 @@ Algoritmo Bodegon_Lo_De_Nando_V_4626
 	Escribir "***********************************"
 	Esperar Tecla
 	Limpiar Pantalla
-	
+
+        // Una vez dejado atraz el fondo de pantalla empezamos realizando un Bucle Mientras el
+	// cual se creó con la finalidad de dar segurida al personal en funsiones lo cual dara 
+	// una tranquilidad de que lo que nenere a travez de su ingreso solo le correspondera sol.
+	// a el en este caso su identidad se verifica pidiendo que ingrese su clave la cual solo
+	// lo dejara en incurrir en tres intentos para lo cual se genera un cont <= 3 en cual llevara
+	// un control de las cantidad de intentos de ingreso de su clave.	
 	
 	Escribir " ***   Por favor controlar Usuario   ***"
 	
@@ -92,14 +107,20 @@ Algoritmo Bodegon_Lo_De_Nando_V_4626
 			cont = 4
 		SiNo
 			si cont = 3 Entonces
-				Escribir "*** Contrase�a Incorrecta ***"
+				Escribir "*** Contraseña Incorrecta ***"
 			FinSi
 		FinSi
 		
 		cont = cont + 1
 		
 	FinMientras
-	
+
+        // En este paso realizamos un ingreso el cual nos permitirá asignar el número de mesa 
+	// lo cual evitara que dos mesas diferentes puedan llevar el mismo numero para lo cual
+	// trabajamos con el Bucle Para que nos permitrira asignar dicho numero y i que forma
+	// la parte que nos entrega el numero de mesa que su resultado fnal lo veremos en la 
+	// impresión del ticket.
+		
 	Escribir "Ingresa la mesa a abrir :"
 	leer mesa
 	
@@ -107,7 +128,14 @@ Algoritmo Bodegon_Lo_De_Nando_V_4626
 		escribir "La mesa abierta es :",i
 		Limpiar Pantalla
 	Fin Para
-	
+
+        // Ahora nos encontramos el la creación de un menu el cual nos redireccionará a otros
+	// submenú el cual nos permitira el ingreso de los pedidos realizados por los clientes 
+	// hacia el personal en función un Bule de Repetir al cual se le anidarón dentro del mismo
+	// otro Bucle Repetir acompañado de un Segun, tambien se creó un Mientras acompañado de un Segun 
+	// dentro de este proceso se realizaron operaciones matematicas que generan un calculo parcial
+	// de los pedidos consumidos para asi despues poder contar con los calculos parciales que se 
+	// terminaran al finalizar estos Bucles y asi poder realizar el calculo final.	
 	Repetir
 		
 		Limpiar Pantalla
@@ -137,8 +165,9 @@ Algoritmo Bodegon_Lo_De_Nando_V_4626
 			leer cant
 			
 			Segun menu_bebidas Hacer
-				1:
-					mont_agu = cant * prec_agu
+				1:  // Según lo narrado anteriormente esta parte nos genera
+				    // uno de los primeros calculos parciales.					
+                                        mont_agu = cant * prec_agu
 					acum_agu= acum_agu + mont_agu
 					cant_agu = cant_agu + cant
 				2:
@@ -162,7 +191,10 @@ Algoritmo Bodegon_Lo_De_Nando_V_4626
 			Limpiar Pantalla
 			
 		hasta Que salir_bebidas <> "s"
-		
+                // Ahora podemos visualizar la suma de los calculos parciales conseguidos en el paso 
+		// anterior quiero resaltar tambien que en este paso se consigue un segundo calculo 
+		// parcial el cual antes del final nos llevará al calculo general.
+				
 		bebidas_total = acum_agu + acum_gas + acum_cer
 		
 		
@@ -254,14 +286,22 @@ Algoritmo Bodegon_Lo_De_Nando_V_4626
 		postres_total = acum_fla + acum_tir + acum_hel
 		
 	Hasta Que  salir = "s"
-	
+
+        // Bueno nos encontramos llegando al final, en este sector nos encontraremos
+	// ante proceso de reunir todos los calculos parciales que se realizaron anteriormente
+	// para si ahora poder conseguir el monto final agregando algo como la suma de la propina 
+	// de nuestro empleado en función.
+
 	total_parcial = bebidas_total + pastas_total + postres_total
 	propina = (total_parcial * 10) /100
 	pago_total = total_parcial + propina
 	
 	Escribir "Ticket a Imprimir :"
 	leer ticket
-	
+
+        // mediante este paso usando el Bucle Para realizamos la simulación de lacarga al número
+	// de Ticket que recibirá nuestro cliente por todo lo consumido.
+		
 	Para j <- 1 Hasta ticket Con Paso 1 Hacer
 		escribir "Ticket a Imprimir es :",j
 		Limpiar Pantalla
@@ -275,7 +315,11 @@ Algoritmo Bodegon_Lo_De_Nando_V_4626
 	Escribir "Mesa: ",i
 	Escribir "Mozo: ",nombre 
 	Escribir ""
-	
+
+        // El uso de los condicionales Si Entonces nos permitió poder agregar a nuetra  simulación 
+	// de  impresión de ticket el ingreso de todos los pedidos consumidos por nuestro cliente lo
+	// que genera la transparencia y da contro  de todo lo facturado.
+
 	Si acum_agu <> 0 Entonces
 		Escribir cant_agu ,".... Aguas ...... ",prec_agu , " $ c/u.... ",acum_agu "$"
 	SiNo
@@ -341,7 +385,7 @@ Algoritmo Bodegon_Lo_De_Nando_V_4626
 	Escribir ""
 	Escribir "Fin Programa"
 	Escribir "Hernando Alcoba"
-	Escribir "Comisi�n 17/21608"
+	Escribir "Comisión 17/21608"
 	Escribir "Martina Macias"
 	Escribir "V.4626"
 	
