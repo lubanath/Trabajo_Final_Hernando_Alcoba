@@ -142,7 +142,7 @@ Algoritmo Bodegon_Lo_De_Nando_V_4626
 		Escribir " *** Ingresa la oprecaion a Realizar *** "
 		Escribir ""
 	    Escribir "******************"
-		Escribir " 1 . Bebbidas "
+		Escribir " 1 . Bebidas "
 		Escribir " 2 . Pastas "
 		Escribir " 3 . Postres "
 		Escribir "******************"
